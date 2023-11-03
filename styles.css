@@ -1,0 +1,335 @@
+/* Reset */
+
+* {
+    padding: 0;
+    margin: 0;
+    font: inherit;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+/* Variables and Fonts */
+
+:root {
+    --bg-blue: #2c698d;
+    --bg-dark-blue: #272643;
+    --bg-gray: #ffffff;
+    --bg-middle-blue: #bae8e8;
+    --bg-light-blue: #bae8e8;
+    font-family: "Heebo";
+}
+
+@font-face {
+    font-family: "Heebo";
+    src: url("fonts/Heebo-VariableFont_wght.ttf");
+}
+
+/* Sections */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 6fr;
+    height: 100vh;
+}
+
+/* Header */
+
+.header {
+    background-color: var(--bg-dark-blue);
+    color: var(--bg-gray);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    box-shadow: -0.5rem 0.2rem 1rem black;
+    position: relative;
+    z-index: 10;
+
+}
+
+.upperHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.searchBar {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+    padding-left: 20px;
+}
+
+#searchBar {
+    height: 2rem;
+    border-radius: 20px;
+    padding: .75rem;
+}
+
+.profileIcons {
+    display: grid;
+    grid-template-columns: 40px 50px 100px;
+    place-items: center;
+    gap: 10px;
+    justify-self: right;
+    padding-right: 2rem;
+}
+
+.notification {
+    justify-self: right;
+}
+
+.smallUsername {
+    justify-self: left;
+}
+
+.searchImg {
+    height: 30px;
+    width: auto;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
+.imgPlaceholder1 {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    background-image: url("images/julien-tromeur-6-adg66qleM-unsplash.jpg");
+    background-size: cover;
+}
+
+
+/* Lower Header */
+
+.lowerHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.profile {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 1fr 2fr;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.imgPlaceholder2 {
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+    grid-area: 1 / 1 / 3 / 2;
+    background-image: url("images/julien-tromeur-6-adg66qleM-unsplash.jpg");
+    background-size: cover;
+}
+
+.user {
+    font-size: 1.8rem;
+    align-self: flex-start;
+}
+
+.greeting {
+    align-self: flex-end;
+}
+
+.actionButtons {
+    display: grid;
+    grid-template-columns: repeat(3, 6.6rem);
+    gap: 3rem;
+    align-self: center;
+    justify-self: right;
+    padding-right: 2rem;
+}
+
+button {
+    height: 2.2rem;
+    width: 6.4rem;
+    border-radius: 3.2rem;
+    background-color: var(--bg-blue);
+    color: var(--bg-gray);
+    border: none;
+}
+
+/* Sidebar */
+
+.sidebar {
+    background-color: var(--bg-blue);
+    grid-area: 1 / 1 / 3 / 2;
+    display: grid;
+    grid-template-rows: 1fr 2fr 3fr;
+    align-items: start;
+    position: relative;
+    z-index: 11;
+}
+
+.logo {
+    color: var(--bg-gray);
+    font-size: 2rem;
+    display: inline-grid;
+    grid-template-columns: 70px 1fr;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logoImg {
+    height: 60px;
+    width: auto;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
+.sectionTabs,
+.supportTabs {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.supportTabs {
+    align-self: center;
+}
+
+
+
+.tab img {
+    height: 30px;
+    width: auto;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
+.tab {
+    color: var(--bg-gray);
+    font-size: 1.2rem;
+    display: inline-grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+}
+
+.content {
+    background-color: var(--bg-gray);
+    display: grid;
+    grid-template-columns: 1fr 18rem;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    overflow: auto;
+    padding: 1rem;
+}
+
+/* Content Section */
+
+.projects {
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+.sectionTitle {
+    font-weight: bold;
+    font-size: 1.4rem;
+    padding-bottom: 1rem;
+}
+.projectCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 26rem));
+    gap: 2rem;
+}
+
+.trending {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.card {
+    background-color: var(--bg-middle-blue);
+    height: 16rem;
+    display: grid;
+    grid-template-rows: 2.4rem 7.4rem 1fr;
+    padding: .8rem;
+    border-radius: .5rem;
+    border-left: solid var(--bg-dark-blue) 10px;
+    padding: 1.6rem;
+}
+
+.cardIcons {
+justify-self: end;
+place-self: end;
+
+}
+
+.cardTitle{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cardIcon {
+    height: 20px;
+    width: auto;
+}
+
+.cardContent {
+    overflow: hidden;
+}
+
+.announceCards {
+    background-color: var(--bg-middle-blue);
+    border-radius: .5rem;
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.underline {
+    padding-bottom: 1rem;
+    border-bottom: solid 2px var(--bg-dark-blue);
+}
+
+.singleAnnounceTitle {
+    font-weight: bold;
+}
+
+.trendingCards {
+    background-color: var(--bg-middle-blue);
+    border-radius: .5rem;
+    display: grid;
+    justify-content: left;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.trendingImg {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 1.5rem;
+    background-size: cover;
+}
+
+.img1 {
+    background-image: url(images/alison-wang-mou0S7ViElQ-unsplash.jpg);
+}
+
+.img2 {
+    background-image: url(images/nik-Oklzj82ffsQ-unsplash.jpg);
+}
+
+.img3 {
+    background-image: url(images/shubham-dhage-t0Bv0OBQuTg-unsplash.jpg);
+}
+
+.img4 {
+    background-image: url(images/zakaria-ahada-VGR_ReUCqNw-unsplash.jpg);
+}
+
+.singleTrending {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    gap: .8rem;
+}
+
+.trendingCaption {
+    font-size: .9rem;
+}
+
+.trendingName {
+    font-weight: bold;
+    font-size: 1rem;
+}
